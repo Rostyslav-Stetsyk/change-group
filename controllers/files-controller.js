@@ -28,7 +28,7 @@ const getDate = async (req, res, next) => {
   const file = await fs.readFile(filePath, "utf8");
   const fileData = JSON.parse(file);
 
-  res.status(200).json({ date: fileData });
+  res.status(200).json(fileData);
 };
 
 export default {

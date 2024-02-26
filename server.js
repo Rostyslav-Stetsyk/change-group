@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-app.use("api/files", filesRouter);
+app.use("/api/files", filesRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });

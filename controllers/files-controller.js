@@ -9,6 +9,8 @@ const createNewFile = async (req, res, next) => {
 
   await fs.writeFile(filePath, JSON.stringify(req.body, null, 2));
   console.log("File created");
+
+  res.status(204);
 };
 
 export default { createNewFile: ctrlWrapper(createNewFile) };

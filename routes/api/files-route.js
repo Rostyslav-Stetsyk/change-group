@@ -3,6 +3,7 @@ import filesController from "../../controllers/files-controller.js";
 
 const filesRouter = express.Router();
 
-filesRouter.post("/", filesController.createNewFile);
+filesRouter.patch("/", filesController.createNewFile);
+filesRouter.get("/", filesController.getDate);
 
 export default filesRouter;

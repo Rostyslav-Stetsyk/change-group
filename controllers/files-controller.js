@@ -20,10 +20,12 @@ const createNewFile = async (req, res, next) => {
 };
 
 const getDate = async (req, res, next) => {
+  const { q } = req.query;
   const file = await fs.readFile(filePath, "utf8");
   const fileData = JSON.parse(file);
+  const filteredData = fileData.filter((el) => el.includes(q));
 
-  res.status(200).json(fileData);
+  res.status(200).json(filteredData);
 };
 
 const deleteAcc = async (req, res, next) => {

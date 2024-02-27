@@ -1,7 +1,7 @@
 const refs = {
   form: document.querySelector("#form"),
   list: document.querySelector("#group-list"),
-  button: document.querySelector("#get-groups"),
+  search: document.querySelector("#search-form"),
 };
 
 const url = window.location.origin + "/api/files";
@@ -9,8 +9,14 @@ const url = window.location.origin + "/api/files";
 const createElement = (el) =>
   `<li data-acc="${el}"><a href="https://t.me/${el}">${el}</a><button type="button">Delete</button></li>`;
 
-refs.button.addEventListener("click", () => {
-  fetch(url)
+refs.search.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  fetch(url + `?q=${e.currentTarget.name.value}`, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  })
     .then((resp) => {
       if (!resp.ok) {
         throw new Error(resp.status);

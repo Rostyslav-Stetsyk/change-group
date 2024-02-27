@@ -15,7 +15,6 @@
       form,
       #group-list {
         width: 100%;
-        margin-bottom: 10px;
       }
 
       label {
@@ -34,7 +33,6 @@
         width: fit-content;
         box-sizing: border-box;
         padding: 8px;
-        margin-bottom: 10px;
       }
 
       ul {
@@ -48,7 +46,7 @@
         justify-content: space-between;
         align-items: center;
         border: 1px solid #ccc;
-        padding: 10px;
+        padding: 5px 10px;
         margin-bottom: 5px;
       }
 
@@ -68,18 +66,23 @@
       .green-button {
         width: 100%;
         background-color: #28a745;
+        margin-bottom: 10px;
       }
     </style>
   </head>
   <body>
     <form id="form">
-      <label for="groupName">Назви груп (розділяти просто пробілом)</label>
+      <label for="groupName"
+        >Додати групу/групи <br />(розділяти групи між собою пробілом)</label
+      >
       <input type="text" name="groupName" id="groupName" />
       <button type="submit" class="green-button">Відправити</button>
     </form>
-    <button type="button" class="green-button" id="get-groups">
-      Отримати список груп
-    </button>
+    <form id="search-form">
+      <label for="name">Пошук групи:</label>
+      <input type="text" name="name" id="name" />
+      <button type="submit" class="green-button" id="get-groups">Пошук</button>
+    </form>
     <ul id="group-list"></ul>
   </body>
   <script type="module" src="./js/index.js"></script>

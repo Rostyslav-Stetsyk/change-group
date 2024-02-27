@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+      }
+
+      form,
+      #group-list {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        width: fit-content;
+        box-sizing: border-box;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 5px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 8px 10px;
+        cursor: pointer;
+      }
+
+      .green-button {
+        width: 100%;
+        background-color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label for="groupName">Назви груп (розділяти просто пробілом)</label>
+      <input type="text" name="groupName" id="groupName" />
+      <button type="submit" class="green-button">Відправити</button>
+    </form>
+    <button type="button" class="green-button" id="get-groups">
+      Отримати список груп
+    </button>
+    <ul id="group-list"></ul>
+  </body>
+  <script type="module" src="./js/index.js"></script>
+</html>
